@@ -1,0 +1,52 @@
+﻿@model OrderIndexVM
+<h1>Confirm your order</h1>
+<form asp-action="SaveOrder">
+    <div class="form-group">
+        <label>Customer: @Model.CustomerName</label>
+        <input type="hidden" asp-for="CustomerID" />
+    </div>
+
+    <div class="form-group">
+        <label>Location: @Model.LocationName, @Model.State</label>
+        <input type="hidden" asp-for="LocationID" />
+    </div>
+    @*@foreach (var item in Model.DrinkOrders)*@
+        @for (int i = 0; i < Model.DrinkOrders.Count; i++)
+            
+        {
+        <div class=" form-group">
+            <label>
+                Drink Name: @Model.DrinkOrders[i].DrinkName
+                <input type="hidden" asp-for="@Model.DrinkOrders[i].DrinkId" />
+            </label>
+
+            <label>
+                ABV: @Model.DrinkOrders[i].ABV %
+                <input type="hidden" asp-for="@Model.DrinkOrders[i].ABV" />
+            </label>
+
+            <label>
+                Price: @Model.DrinkOrders[i].Price.ToString("c2")
+                <input type="hidden" asp-for="@Model.DrinkOrders[i].Price" />
+            </label>
+
+            <label>
+                Quantity: @Model.DrinkOrders[i].Quantity
+                <input type="hidden" asp-for="@Model.DrinkOrders[i].Quantity" />
+            </label>
+
+       
+        </div>
+    }
+
+    <div class=" form-group" >
+        <label>
+            Total: @Model.Total.ToString("c2")
+            <input type="hidden" asp-for="Total" />
+        </label>
+
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary" />
+    </div>
+</form>

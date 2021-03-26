@@ -1,0 +1,28 @@
+﻿@model List<InventoryVM>
+<h1>
+    Available Inventory
+</h1>
+<form asp-action="UpdateInventories">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+    <div>
+        <input type="hidden" asp-for="@Model[i].InventoryID" />
+        <label>
+            Drink Name: @Model[i].DrinkName
+            <input type="hidden" asp-for="@Model[i].DrinkID" />
+        </label>
+        <label>
+            Location: @Model[i].LocationName, @Model[i].State
+            <input type="hidden" asp-for="@Model[i].LocationID" />
+        </label>
+        <label>
+            Quantity
+        </label>
+        <input asp-for="@Model[i].Quantity" />
+    </div>
+    }
+    <div>
+        <input type="submit" class="btn btn-primary" />
+    </div>
+
+</form>

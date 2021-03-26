@@ -1,0 +1,12 @@
+﻿@model Dozen2MVC.Models.CustomerSearchVM
+    <h1>Search a Customer</h1>
+    <form asp-action="Search">
+        <div class=" form-group">
+            <label asp-for="Name">Full Name</label>
+            <input asp-for="Name" />
+        </div>
+    </form>
+
+    <a asp-action="Index">
+        Back to List
+    </a>

@@ -1,0 +1,16 @@
+﻿@model Dozen2MVC.Models.CustomerDeleteVM
+<h1>Delete Customer</h1>
+<h2>Are you sure you would like to delete Customer @Model.Name?</h2>
+<form asp-action="Delete">
+    <div class="form-group">
+        <input type="hidden" asp-for="CustomerId" />
+    </div>
+
+    <div>
+        <input type="submit" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">
+    Back to List
+</a>

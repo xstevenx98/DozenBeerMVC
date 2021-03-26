@@ -1,0 +1,60 @@
+﻿@model LocationOrdersVM
+<h1>
+    Orders by Location
+</h1>
+
+<form asp-action="SearchLocationOrders">
+    <div class="form-group">
+        <label>Location</label>
+        <select asp-for="LocationID" class="form-control" asp-items="ViewBag.Locations"></select>
+    </div>
+
+    <div class="form-group">
+        <label>Sort By</label>
+        <select asp-for="SortBy" class="form-control" asp-items="ViewBag.SortOptions"></select>
+    </div>
+
+    <div>
+        <input type="submit" class="btn btn-primary" />
+    </div>
+</form>
+@if (Model.Orders != null && Model.Orders.Any())
+{
+    @foreach (var item in Model.Orders)
+    {
+        <div>
+            <label>
+                Order Date: @item.OrderDateTime
+            </label>
+            <label>
+                Customer Name : @item.CustomerName
+            </label>
+            <label>
+                Total : @item.Total.ToString("c2")
+            </label>
+
+            @foreach (var drinkOrder in item.DrinkOrders)
+            {
+                <div>
+                    <label>
+                        Drink Name: @drinkOrder.DrinkName
+                    </label>
+                    <label>
+                        ABV : @drinkOrder.ABV %
+                    </label>
+                    <label>
+                        Quantity : x @drinkOrder.Quantity
+                    </label>
+                    <label>
+                        Price :  @drinkOrder.Price.ToString("c2")
+                    </label>
+                </div>
+
+            }
+            <br />
+            <br />
+
+        </div>
+    }
+}
+
