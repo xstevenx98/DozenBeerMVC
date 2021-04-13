@@ -30,6 +30,8 @@ Dozen Beer is a delivery service brings your ordered quantity of drinks straight
 
 # Getting Started
 - modify appSettings to point to elephantsql database
+- Run the app in Visual Studio
+- Browser Preview
 ![dozenmvc](https://user-images.githubusercontent.com/25631936/114595132-0af9cf00-9c5c-11eb-8cad-32781cb127f8.png)
 
 
