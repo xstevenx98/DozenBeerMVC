@@ -15,7 +15,7 @@ Dozen Beer is a delivery service brings your ordered quantity of drinks straight
 -  AutoMapper
 
 # Features
-- users can add and edit customer information ()
+- users can add and edit customer information
 - Customers can place multiple orders and specify how many drinks they want
 - users can view customer order history and order history by location
 - users can refill inventory (TODO: Make this a manager feature only)
