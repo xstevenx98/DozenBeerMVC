@@ -45,3 +45,6 @@ Dozen Beer is a delivery service brings your ordered quantity of drinks straight
 
 # Contributor(s)
 Steven Imas
+
+# License
+- no license
